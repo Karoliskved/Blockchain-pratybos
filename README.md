@@ -14,5 +14,5 @@ Rezultatai:
 3. hash funkcija deterministė pvz: įvestis 'ab' visada išves 'c5118c7ab65683f4c016b7ee64b285cf16b2b1315f2e90fd99d94e608683b929'
 4. Lietuvos konstituciją hash'uojant po vieną eilutė užtrunka ~1ms
 5. hash'uojant **100000** atsitiktinai sugeneruotų simbolių eilučių iš failo "testcase5.1.txt" randamas **31** kolizijų atvėjų. pasikartojantys hash'ai saugomi faile "repeatinghashcodes.txt"
-6. skirtingumas:
-  * stuff
+6. ### skirtingumas:
+*  stuff
