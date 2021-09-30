@@ -15,4 +15,7 @@ Rezultatai:
 4. Lietuvos konstituciją hash'uojant po vieną eilutė užtrunka ~1ms
 5. hash'uojant **100000** atsitiktinai sugeneruotų simbolių eilučių iš failo "testcase5.1.txt" randamas **31** kolizijų atvėjų. pasikartojantys hash'ai saugomi faile "repeatinghashcodes.txt"
 6. ### skirtingumas:
-*  stuff
+ skirtingumas| max | min | average
+------------ | ------------- | ------------- | -------------
+bitų lygmenį| 161 | 93 | 128.004
+hex'ų lygmenį| 64 | 50 | 60.0001
