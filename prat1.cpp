@@ -53,7 +53,7 @@ string myHash(string n){
     for (int i=0; i!=n.length(); i++){
         movedbits = (int(n[i]) << 5);
         sum+=((sum/7+movedbits) << 5);
-       reversemovedbits=(n[n.size()-1-i] << 7);
+       reversemovedbits=(int(n[n.size()-1-i]) << 7);
         sumreverse+=((sumreverse/7+reversemovedbits) << 7);
         sumfinal+=sum+sumreverse;
     }
@@ -92,7 +92,6 @@ void choice(){
     }
     if(n=='2'){
         string input= ivedimas();
-        vector<int>  movedbits;
        cout << myHash(input) << endl;
     }
     if(n=='3'){
@@ -103,7 +102,8 @@ void choice(){
         vector <string> colvector;
         vector <string> colvectorremoved;
         string hashtest;
-        int i=0, counter=0;
+        int i=0; 
+        int counter=0;
         inputFile.open("testcase5.1.txt");
 
         while (getline(inputFile, input)){
@@ -122,7 +122,7 @@ void choice(){
             counter=0;
             
         }
-        cout << colvector.size() << endl; 
+        cout << "repeating hashes " <<colvectorremoved.size() << endl; 
         for(int i=0; i!=colvectorremoved.size(); i++){
             out_fbad << i << " " << colvectorremoved[i]<<endl;
         }
@@ -131,17 +131,20 @@ void choice(){
         ifstream inputFile;
         string input;
         vector<string> konsvector;
-        
+        std::chrono::duration<double> diff;
        int i=0;
         inputFile.open("konstitucija.txt");
          while (getline(inputFile, input)){
              konsvector.push_back(input);
          }
-         auto start = std::chrono::high_resolution_clock::now();
+         
          for(int i=0; i!=konsvector.size(); i++){
+            auto start = std::chrono::high_resolution_clock::now();
             myHash(konsvector[i]);
+            auto end = std::chrono::high_resolution_clock::now();
+            diff+=(end-start);
          }
-         std::chrono::duration<double> diff = std::chrono::high_resolution_clock::now() - start; // Skirtumas (s)
+         
         std::cout << "konstitucijos hash'avimo laikas: " << diff/std::chrono::milliseconds(1) << " ms\n";
 
     }
@@ -208,7 +211,6 @@ void choice(){
             }
             if(bitsum<minbit){
                 minbit=bitsum;
-                
             }
             if(bitsum>maxbit){
                 maxbit=bitsum;
@@ -219,9 +221,9 @@ void choice(){
             
         }
         cout << "hex max: " << max << " hex min: " << min << endl;
-        cout << "hex average: " <<100*(allsum/64)/100000 << endl;
+        cout << "hex average: " <<allsum/100000 << endl;
         cout << "bit max " << maxbit << " bit min " << minbit << endl;
-        cout << "bit average: " <<100*(allbitsum/256)/100000 << endl;
+        cout << "bit average: " <<allbitsum/100000 << endl;
         cout << minimumpair << endl;
         for(int i=0; i!=100000; i++){
             out_fhashes <<"pair: " <<i+1 << endl;
