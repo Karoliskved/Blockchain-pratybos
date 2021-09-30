@@ -20,8 +20,8 @@ Hash'uojami stringai laikomi failuose "testcase6a.txt" ir "testcase6b.txt"
 Suhash'uotos poros išvedamos į failą "testcase6hashes.txt"
 skirtingumas| max | min | average
 ------------ | ------------- | ------------- | -------------
-bitų lygmenį| 161 | 93 | 128.004
-hex'ų lygmenį| 64 | 50 | 60.0001
+bitų lygmenį| 161 | 93 | 128.004/256
+hex'ų lygmenį| 64 | 50 | 60.0001/64
 
 ## Išvados:
 
